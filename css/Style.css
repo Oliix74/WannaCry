@@ -1,0 +1,968 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ReglageDeCouleurs {
+    color: #212529; /* GREY */
+    color: #121518; /* DARKGREY */
+}
+
+body {
+    overflow-x: hidden;
+    background: #121518;
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 10px;
+    background: #212529;
+    border-radius: 100vw;
+}
+
+::selection {
+    background: #e63946;
+    color: #212529;
+}
+
+main {
+    width: 100%;
+    height: 120px;
+    background: #121518;
+}
+
+a {
+    text-decoration: none;
+    color: #eee;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    background: #121518;
+}
+
+.hcontainer {
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.menu-toggle{
+	position: fixed;
+	top: 4rem;
+	right: 3.5rem;
+	color: #eeeeee;
+	font-size: 3rem;
+	cursor: pointer;
+	z-index: 1000;
+	display: none;
+}
+
+nav {
+    padding-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+}
+
+li {
+    list-style: none;
+}
+
+.brand {
+    font-family: 'Raleway', 'Roboto',sans-serif;
+    font-size: 3.35rem;
+    font-weight: 800;
+    letter-spacing: .8px;
+    transform: translateX(-100rem);
+    animation: slideIn .4s forwards;
+}
+
+.brand a:hover {
+    animation: ease-out toRed 1.2s;
+}
+
+.brand span {
+    color:  #e63946;
+}
+
+.brand a:hover span {
+    animation: toWhite 1.2s;
+}
+
+.brand2 {
+    display: none;
+}
+
+.brand2 span {
+    color:  #e63946;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    list-style: none;
+    transform: translateX(100rem);
+    animation: slideIn .4s forwards;
+}
+
+nav ul li:nth-child(1) {
+    animation-delay: .4s;
+}
+
+nav ul li:nth-child(2) {
+    animation-delay: .8s;
+}
+
+nav ul li:nth-child(3) {
+    animation-delay: 1.2s;
+}
+
+nav ul li:nth-child(4) {
+    animation-delay: 1.6s;
+}
+
+nav ul li a {
+    padding: 1rem 0;
+    margin: 0 3rem;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+nav ul li a:last-child {
+    margin-right: 0;
+}
+
+nav ul li a::before,
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #e63946;
+    left: 0;
+    transform: scaleX(0);
+    transition: all .25s ease-out;
+}
+
+nav ul li a::before{
+    top: 0;
+    transform-origin: left;
+}
+
+nav ul li a::after {
+    bottom: 0;
+    transform-origin: right;
+}
+
+.overlay{
+	background-color: #121518;
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	transition: opacity 650ms;
+	transform: scale(0);
+	opacity: 0;
+  display: none;
+}
+
+
+nav ul li a:hover::before,
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+nav ul li:nth-child(1) a:before,
+nav ul li:nth-child(1) a:after {
+    animation: headBars .35s forwards;
+    animation-delay: 2.2s;
+    
+}
+
+.mainPage {
+    display: flex;
+    flex-direction: column;
+}
+
+.presentation {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.pContainer {
+    width: 90%;
+    height: 650px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+    background: #151a1f;
+    border-radius: 50px;
+    color: #eeeeee;
+}
+
+.element {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.element:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 6%;
+}
+
+.element:nth-child(1) h1 {
+    font-size: 5rem;
+    text-transform: uppercase;
+}
+
+.element:nth-child(1) h1 span {
+    color: #eeeeee;
+    animation: red 1s forwards;
+    animation-delay: 2.2s;
+}
+
+.element:nth-child(1) h2 {
+    color: #a1a1a1;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+}
+
+.element:nth-child(1) button {
+    height: 50px;
+    width: 200px;
+    border: none;
+    border-radius: 50px;
+    background: #2f3438;
+    transition: all 0.5s ease-out;
+    color: #eeeeee;
+    font-family: 'Raleway', 'Roboto',sans-serif;
+    text-transform: uppercase;
+}
+
+.element:nth-child(1) button:hover {
+    background: #212529;
+    transition: all 0.5s ease-out;
+    cursor: pointer;
+}
+
+.element:nth-child(1) button:hover a {
+    color: #a1a1a1;
+    transition: all 0.5s ease-out;
+}
+
+.element:nth-child(2) {
+    background-color: #e63946;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 6%;
+    align-items: center;
+}
+
+.element:nth-child(2) h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.element:nth-child(2) h1 span {
+    transition: all .25s ease-out;
+}
+
+.element:nth-child(2) h1 span:hover {
+    color: #212529;
+}
+
+.element:nth-child(2) .darthVader {
+    height: 80%;
+    width: 100%;
+    background-image: url(../images/Presentation/DathVader.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+
+}
+
+.element:nth-child(3) {
+    padding: 6%;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+}
+
+.element:nth-child(3) h1 {
+    font-size: 2.5rem;
+}
+
+.element:nth-child(3) h1 span {
+    color: #a1a1a1;
+}
+
+.cType:hover {
+    cursor: pointer;
+    color: #a1a1a1;
+}
+
+.element:nth-child(3) .choice1 .button {
+    height: 50px;
+    width: 90%;
+    display: flex;
+    margin: 3% 0%;
+    line-height: 50px;
+    border-radius: 50px;
+    align-items: center;
+    background: #101316;
+    justify-content: space-between;
+}
+
+.element:nth-child(3) .choice1 .button h1 {
+    font-size: 1.8rem;
+}
+
+.element:nth-child(3) .choice1 .button h1:nth-child(1) {
+    margin-left: 5px;
+    line-height: 40px;
+    padding: 0px 25px;
+    color: #e63946;
+    background: #151a1f;
+    border-radius: 50px;
+}
+
+.element:nth-child(3) .choice1 .button h1:nth-child(2) {
+    margin-right: 5%;
+}
+
+.element:nth-child(3) .choice1 .button h1:nth-child(3) {
+    margin-right: 10%;
+}
+
+.element:nth-child(3) .c2container {
+    margin: 3% 0;
+    height: auto;
+    width: 90%;
+    background: #101316;
+    padding: 25px;
+    border-radius: 25px;
+}
+
+
+
+.element:nth-child(3) .choice2 .ctop {
+    display: flex;
+    line-height: 25px;
+    margin: 4% 0;
+}
+
+.element:nth-child(3) .choice2 .number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-family: 'Raleway', 'Roboto', sans-serif;
+    height: 25px;
+    width: 25px;
+    background: rgb(10, 10, 10);
+}
+
+.element:nth-child(3) .choice2 .filmName {
+    font-family: 'Raleway', 'Roboto', sans-serif;
+    margin-left: 4%;
+    font-size: 1.5rem;
+}
+
+.element:nth-child(3) .top .header {
+    font-size: 1.8rem;
+    font-family: 'Raleway', 'Roboto', sans-serif;
+    text-decoration: underline;
+}
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+ /* Listes Film */
+ul.Films {
+    /* background: blue; */
+    width: 100%;
+    height: 175px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    overflow: hidden;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+
+.filmTitle {
+    color: #eeeeee;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin: 50px 0 0 5%;
+}
+
+.item {
+    width: 175px;
+    height: 175px;
+    /* margin-right: 2%; */
+    border-radius: 15px;
+    overflow: hidden;
+    background: blue;
+}
+
+.item .black {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.item .Text {
+    margin: 10%;
+}
+
+.item .Name {
+    font-size: 1.6rem;
+    color: #eee;
+}
+
+.item .Year {
+    color: #a1a1a1;
+}
+
+.item button {
+    padding: 5% 10%;
+    border-radius: 50px;
+    border: none;
+    margin-top: 2%;
+    background: #e63946;
+    font-weight: 600;
+    color: #eeeeee;
+    transition: all 0.35s ease-out;
+}
+
+.item button:hover {
+    cursor: pointer;
+    background: #9e232d;
+}
+
+.fitem:nth-child(1) {
+    background-image: url(../images/Films/Uncharted.jpg);
+    background-size: cover;
+    background-position: center 10%;
+}
+
+.fitem:nth-child(2) {
+    background-image: url(../images/Films/TopGun86.jpg);
+    background-size: cover;
+    background-position: center 0;
+}
+
+.fitem:nth-child(3) {
+    background-image: url(../images/Films/Avatar.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.fitem:nth-child(4) {
+    background-image: url(../images/Films/SpidermanNWH.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+.fitem:nth-child(5) {
+    background-image: url(../images/Films/Titanic.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.fitem:nth-child(6) {
+    background-image: url(../images/Films/ENdGame.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.fitem:nth-child(7) {
+    background-image: url(../images/Films/SW7.jpg);
+    background-size: cover;
+    background-position: center -0px;
+}
+
+.fitem:nth-child(8) {
+    background-image: url(../images/Films/terminator.jpg);
+    background-size: cover;
+    background-position: center ;
+}
+
+
+
+
+ul.Series {
+    /* background: blue; */
+    width: 100%;
+    height: 175px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    overflow: hidden;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.sitem:nth-child(1) {
+    background-image: url(../images/Series/GOT.jpg);
+    background-size: cover;
+    background-position: center ;
+}
+
+.sitem:nth-child(2) {
+    background-image: url(../images/Series/Breaking\ bad.jpg);
+    background-size: cover;
+    background-position: left ;
+}
+
+.sitem:nth-child(3) {
+    background-image: url(../images/Series/Arcane.jpg);
+    background-size: cover;
+    background-position: center ;
+}
+
+.sitem:nth-child(4) {
+    background-image: url(../images/Series/peaky.jpg);
+    background-size: cover;
+    background-position: center ;
+}
+
+.sitem:nth-child(5) {
+    background-image: url(../images/Series/Vikings.jpg);
+    background-size: cover;
+    background-position: center ;
+}
+
+.sitem:nth-child(6) {
+    background-image: url(../images/Series/la\ casa\ de\ papel.jpg);
+    background-size: cover;
+    background-position: center ;
+}
+
+.sitem:nth-child(7) {
+    background-image: url(../images/Series/stranger\ things.jpg);
+    background-size: cover;
+    background-position: center ;
+}
+
+.sitem:nth-child(8) {
+    background-image: url(../images/Series/euphoria.jpg);
+    background-size: cover;
+    background-position: center ;
+}
+
+
+ul.Anime {
+    /* background: blue; */
+    width: 100%;
+    height: 175px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    overflow: hidden;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.aitem:nth-child(1) {
+    background-image: url(../images/Animes/jojo.jpg);
+    background-size: cover;
+    background-position: center 10%;
+}
+
+.aitem:nth-child(2) {
+    background-image: url(../images/Animes/overlord.jpg);
+    background-size: cover;
+    background-position: center ;
+}
+
+.aitem:nth-child(3) {
+    background-image: url(../images/Animes/another.jpg);
+    background-size: cover;
+    background-position: center ;
+}
+
+.aitem:nth-child(4) {
+    background-image: url(../images/Animes/bgs.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.aitem:nth-child(5) {
+    background-image: url(../images/Animes/hxh.jpg);
+    background-size: cover;
+    background-position: center ;
+}
+
+.aitem:nth-child(6) {
+    background-image: url(../images/Animes/onepiece.jpg);
+    background-size: cover;
+    background-position: center ;
+}
+
+.aitem:nth-child(7) {
+    background-image: url(../images/Animes/deathnote.jpg);
+    background-size: cover;
+    background-position: center 0 .1%;
+}
+
+.aitem:nth-child(8) {
+    background-image: url(../images/Animes/assassin.jpg);
+    background-size: cover;
+    background-position: center 10%;
+}
+
+
+
+
+
+
+
+
+video {
+    z-index: -5;
+}
+
+.sitem:nth-child(8) img {
+    height: 175px;
+}
+
+.sitem:nth-child(8):hover img {
+    display: none;
+}
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1024px){
+
+    ::-webkit-scrollbar {
+        width: .5px;
+        background: transparent;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        width: .5px;
+        background: #121518;
+    }
+
+    main {
+        height: 90px;
+    }
+
+    header {
+        height: 60px;
+    }
+
+	.menu-toggle{
+		display: block;
+        top: 2.5rem;
+        right: 2.75;
+        font-size: 2.5rem;
+	}
+
+
+
+	nav{
+        margin-top: -15%;
+		padding-top: 0;
+		flex-direction: column;
+		display: none;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		text-align: center;
+	}
+
+	nav ul{
+		flex-direction: column;
+	}
+
+	nav ul li{
+		margin-top: 2.5rem;
+	}
+
+	nav ul li a{
+		margin: 0;
+		font-size: 2rem;
+    }
+
+    nav ul li:nth-child(1) a:before,
+    nav ul li:nth-child(1) a:after {
+        animation: none;
+    }
+
+	.brand{
+		font-size: 3rem;
+        margin-bottom: 5%;
+    }
+
+
+    .brand2 {
+        text-transform: uppercase;
+        display: block;
+        position: fixed;
+        top: 2.75rem;
+        left: 2.75rem;
+        font-family: 'Raleway', 'Roboto',sans-serif;
+        font-size: 2rem;
+        font-weight: 800;
+        letter-spacing: .8px;
+        transform: translateX(-100rem);
+        animation: slideIn .4s forwards;
+    }
+
+    .hContainer {
+        z-index: 999;
+    }
+
+    .pContainer {
+        flex-direction: column;
+        margin-bottom: 10%;
+    }
+
+    
+    .overlay.menu-open,
+    nav.menu-open{
+        display: flex;
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .pContainer {
+        height: 250px;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .element:nth-child(2), .element:nth-child(3) {
+        display: none;
+    }
+
+    .element:nth-child(1) {
+        text-align: center;
+    }
+
+    .element:nth-child(1) h1 {
+        margin: 2%;
+        font-size: 2.5rem;
+    }
+
+    .element:nth-child(1) h2 {
+        font-size: 1.5rem;
+    }
+
+    .element:nth-child(1) button {
+        height: 50px;
+        width: 80%;
+        border: none;
+        border-radius: 50px;
+        background: #2f3438;
+    }
+
+
+
+
+    /* Film List */
+
+    .filmSeriesAnimes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul.Films {
+        flex-wrap: nowrap;
+        padding: 0 0;
+        width: 90%;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+
+    .filmTitle {
+        font-size: .8rem;
+        margin: 5% 0 -25px 5%;
+    }
+
+    ul.Series {
+        flex-wrap: nowrap;
+        padding: 0 0;
+        width: 90%;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+
+    ul.Anime {
+        flex-wrap: nowrap;
+        padding: 0;
+        width: 90%;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+
+
+
+    .item {
+        width: 125px;
+        min-width: 125px;  
+        height: 125px;
+        min-height: 125px;
+        margin-right: 5%;
+        margin-bottom: 0;
+    }
+
+    .item .Name  {
+        font-size: 1.35rem;
+    }
+
+    .item button {
+        display: none;
+    }
+
+}
+
+
+
+@keyframes toWhite {
+    from {
+        color: #e63946;
+    }
+
+    45%, 55% {
+        color: #eeeeee;
+    }
+
+    to {
+        color: #e63946;
+    }
+}
+
+@keyframes toRed {
+    from {
+        color: #eeeeee;
+    }
+
+    45%, 55% {
+        color: #e63946;
+    }
+
+    to {
+        color: #eeeeee;
+    }
+}
+
+@keyframes red {
+    from {
+    }
+    to {
+        color: #e63946;
+    }
+}
+
+@keyframes slideIn {
+    from {
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes headBars {
+    from {
+
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
